@@ -1,5 +1,7 @@
 package com.septlieues.interview.models;
 
+import java.util.Objects;
+
 public class CartModel {
 
     private String name;
@@ -15,6 +17,19 @@ public class CartModel {
         this.ordinalNameValue = ordinalNameValue;
         this.color = color;
         this.ordinalColorValue = ordinalColorValue;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CartModel cartModel = (CartModel) o;
+        return Objects.equals(name, cartModel.name) && Objects.equals(color, cartModel.color);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, color);
     }
 
     public String getName() {

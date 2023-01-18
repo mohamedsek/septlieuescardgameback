@@ -17,6 +17,8 @@ public class MockCartRepository implements CartRepository {
         // Stocker l'ensemble des cartes dans cette Set pour simuler un repository de données
 
         carts.add(new CartModel("As", 1, "Carreaux", 1));
+        // This cart is intentionally duplicate value to test method Cart's "equals" is working fine with "Set"
+        carts.add(new CartModel("As", 1, "Carreaux", 1));
         carts.add(new CartModel("As", 1, "Carreaux", 1));
         carts.add(new CartModel("2", 8, "Carreaux", 1));
         carts.add(new CartModel("3", 9, "Carreaux", 1));
