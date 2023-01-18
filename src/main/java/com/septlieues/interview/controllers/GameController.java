@@ -1,6 +1,7 @@
 package com.septlieues.interview.controllers;
 
 
+import com.septlieues.interview.dto.GameRoundDto;
 import com.septlieues.interview.models.CartModel;
 import com.septlieues.interview.services.GameService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class GameController {
     private GameService gameService;
 
     @RequestMapping(method = RequestMethod.GET, value = "/play")
-    public Set<CartModel> play() {
+    public GameRoundDto play() {
         return gameService.nextRound();
     }
 
