@@ -8,15 +8,23 @@ public class CartModel {
     private Integer ordinalNameValue;
     private String color;
     private Integer ordinalColorValue;
+    private String imageUrl;
 
     public CartModel() {
     }
 
-    public CartModel(String name, Integer ordinalNameValue, String color, Integer ordinalColorValue) {
+    public CartModel(String name, Integer ordinalNameValue, String color, Integer ordinalColorValue, String imageUrl) {
         this.name = name;
         this.ordinalNameValue = ordinalNameValue;
         this.color = color;
         this.ordinalColorValue = ordinalColorValue;
+        this.imageUrl = imageUrl;
+    }
+
+    public CartModel(String name, String color, String imageUrl) {
+        this.name = name;
+        this.color = color;
+        this.imageUrl = imageUrl;
     }
 
     @Override
@@ -62,5 +70,13 @@ public class CartModel {
 
     public void setOrdinalColorValue(Integer ordinalColorValue) {
         this.ordinalColorValue = ordinalColorValue;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
